@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'mzmarket/main/css/main.css' %}">
+{% endblock %}
+{% block header %}
+    <header></header>
+{% endblock %}
+{% block footer %}
+    <footer>
+        <a href="{% url 'mz:home' %}" class="home">
+            <dl>
+                <dt>
+                    <span></span>
+                    <dd>首页</dd>
+                </dt>
+            </dl>
+        </a>
+            <a href="{% url 'mz:market' %}" class="market">
+            <dl>
+                <dt>
+                    <span></span>
+                    <dd>闪购</dd>
+                </dt>
+            </dl>
+        </a>
+            <a href="{% url 'mz:cart' %}" class="cart">
+            <dl>
+                <dt>
+                    <span></span>
+                    <dd>购物车</dd>
+                </dt>
+            </dl>
+        </a>
+            <a href="{% url 'mz:mine' %}" class="mine">
+            <dl>
+                <dt>
+                    <span></span>
+                    <dd>我的</dd>
+                </dt>
+            </dl>
+        </a>
+    </footer>
+{% endblock %}
