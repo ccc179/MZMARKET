@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from App.models import MainWheel, MainNav, MainMustbuy, MainShop, MainShow
+from App.models import MainWheel, MainNav, MainMustbuy, MainShop, MainShow, FoodType, Goods
 
 
 def home(request):
@@ -26,7 +26,15 @@ def home(request):
 
 
 def market(request):
-    return render(request, 'main/market.html', context={'title': '萌猪商品'})
+    foodtypes = FoodType.objects.all()
+    goods_list = Goods.objects.all()
+
+    data = {
+        'title': '闪购',
+        'foodtypes': foodtypes,
+        'goods_list': goods_list,
+    }
+    return render(request, 'main/market.html', context=data)
 
 
 def cart(request):
