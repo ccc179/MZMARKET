@@ -221,7 +221,7 @@ section > button {
     color: red;
     display: inline-block;
     text-align: center;
-    line-height: 0.55rem;
+    line-height: 0.5rem;
     font-weight: 900;
     width: 0.5rem;
     height: 0.5rem;
@@ -240,7 +240,7 @@ li > section > span {
 }
 
 
-/************分类********************************/
+/* 全部分类 ， 综合排序 */
 section menu > div {
     position: fixed;
     top: 2.7rem;
@@ -249,6 +249,7 @@ section menu > div {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: grey;
+    display: none;
 }
 
 section menu > div > div {
@@ -256,7 +257,7 @@ section menu > div > div {
     padding-bottom: 0.3rem;
 }
 
-section menu > div > div > a > span {
+section menu > div > div > a > button {
     border: 0.04rem solid #e0e0e0;
     padding: 0.1rem 0.2rem;
     margin-left: 0.3rem;

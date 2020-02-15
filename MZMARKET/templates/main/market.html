@@ -4,6 +4,10 @@
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'mzmarket/main/css/market.css' %}">
 {% endblock %}
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'mzmarket/main/js/market.js' %}"></script>
+{% endblock %}
 
 {% block content %}
     <div id="market">
@@ -12,20 +16,22 @@
             <ul>
                 {% for foodtype in foodtypes %}
                     <li>
-                        <a href="#">{{ foodtype.typename }}</a>
-                        <span class="yellowSlide"></span>
+                        <a href="{% url 'mz:market_with_params' typeid=foodtype.typeid childcid=0 order_rule=0 %}">{{ foodtype.typename }}</a>
+                        {% ifequal foodtype.typeid typeid %}
+                            <span class="yellowSlide"></span>
+                        {% endifequal %}
                     </li>
                 {% endfor %}
 
             </ul>
         </aside>
-        {#    右边#}
+        {#    右上排序分类#}
 
         <section>
             <nav>
                 <ul>
-                    <li><span>全部分类 <span class="glyphicon glyphicon-chevron-down"></span></span></li>
-                    <li><span>综合排序 <span class="glyphicon glyphicon-chevron-down"></span></span></li>
+                    <li id="all_types"><span>全部分类 <span class="glyphicon glyphicon-chevron-down"></span></span></li>
+                    <li id="all_sort"><span>综合排序 <span class="glyphicon glyphicon-chevron-down"></span></span></li>
                 </ul>
             </nav>
 
@@ -50,10 +56,43 @@
                                     </p>
                                 </div>
                             </a>
+                            <section>
+                                <button>－</button>
+                                <span>0</span>
+                                <button>＋</button>
+                            </section>
                         </li>
                     {% endfor %}
 
                 </ul>
+                <div id="all_types_container">
+                    <div>
+                        {% for foodtypes_childtype in foodtypes_childtypes %}
+                            <a href="{% url 'mz:market_with_params' typeid=typeid childcid=foodtypes_childtype.1 order_rule=0 %}">
+                            {% ifequal childcid foodtypes_childtype.1 %}
+                                <button class="btn btn-success">{{ foodtypes_childtype.0 }}</button>
+                            {% else %}
+                                <button class="btn btn-default">{{ foodtypes_childtype.0 }}</button>
+                            {% endifequal %}
+
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="all_sort_container">
+                    <div>
+                        {% for order_rule in order_rule_list %}
+                            <a href="{% url 'mz:market_with_params' typeid=typeid childcid=childcid order_rule=order_rule.1 %}">
+                            {% ifequal order_rule_params order_rule.1 %}
+                                <button class="btn btn-success">{{order_rule.0}}</button>
+                            {% else %}
+                                <button class="btn btn-default">{{order_rule.0}}</button>
+                            {% endifequal %}
+
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
             </menu>
         </section>
     </div>

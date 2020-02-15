@@ -1,0 +1,51 @@
+{% extends 'base_user.html' %}
+{% load static %}
+{% block ext_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'mzmarket/user/js/register.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data" action="{% url "mz:register" %}" onsubmit="return check()">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username_input">用户名</label>
+                <input name="username" type="text" class="form-control" id="username_input" placeholder="请输入用户名">
+                <span id="username_info"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password_input">密码</label>
+                <input name="password" type="password" class="form-control" id="password_input" placeholder="请输入密码">
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirm_input">确认密码</label>
+                <input type="password" class="form-control" id="password_confirm_input" placeholder="请再输一次">
+            </div>
+
+            <div class="form-group">
+                <label for="email_input">Email</label>
+                <input name="email" type="text" class="form-control" id="email_input" placeholder="请输入邮箱">
+            </div>
+
+            <div class="form-group">
+                <label for="role_input">绑定角色名</label>
+                <input name="role" type="text" class="form-control" id="role_input" placeholder="请输入您的角色名">
+            </div>
+
+            <div class="form-group">
+                <label for="icon_input">上传头像(不上传则使用默认头像)</label>
+                <input name="icon" type="file" id="icon_input">
+                <p class="help-block">请选择头像图片文件.</p>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">注册</button>
+        </form>
+    </div>
+{% endblock %}
