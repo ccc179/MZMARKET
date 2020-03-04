@@ -2,28 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="222f401f-c753-4b98-9ac8-8500ed66f7cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/migrations/0008_mzuser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/migrations/0009_auto_20200214_1746.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/views_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/views_helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Note.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/mzmarket/main/js/market.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/mzmarket/user/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/mzmarket/user/css/user.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/mzmarket/user/js/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/15/000.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/15/000_qUUWbag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/migrations/0010_cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/migrations/0011_auto_20200301_1455.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/migrations/0012_auto_20200301_1610.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/templatetags/set_var.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mzmarket/main/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mzmarket/main/js/mine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mzmarket/user/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/16/000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/24/000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/24/000_gy5q7jx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/24/000_inBo38m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/02/24/000_up2AJqr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/03/01/000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/icon/2020/03/04/000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/activate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/activate_fail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9f3996a0-2b58-4d34-aeb7-4636d10322ca.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9f3996a0-2b58-4d34-aeb7-4636d10322ca.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/views_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/views_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MZMARKET/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MZMARKET/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note.md" beforeDir="false" afterPath="$PROJECT_DIR$/Note.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mzmarket/main/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/main/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mzmarket/main/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/main/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/mzmarket/main/css/market.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/main/css/market.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mzmarket/main/css/mine.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/main/css/mine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mzmarket/main/js/market.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/main/js/market.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mzmarket/user/css/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/user/css/user.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mzmarket/user/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/mzmarket/user/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/market.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/market.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/mine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +84,9 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MZMARKET" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -92,16 +115,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/mzmarket/main/css" />
-      <recent name="$PROJECT_DIR$/static/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/mzmarket/user/css" />
       <recent name="$PROJECT_DIR$/templates/user" />
       <recent name="$PROJECT_DIR$/static/mzmarket/main/img" />
       <recent name="$PROJECT_DIR$/static/mzmarket/main/css" />
       <recent name="$PROJECT_DIR$/static/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/App/templatetags" />
+      <recent name="$PROJECT_DIR$/static/mzmarket/main/css" />
+      <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -206,7 +230,11 @@
       <workItem from="1581247827196" duration="2874000" />
       <workItem from="1581287008766" duration="12655000" />
       <workItem from="1581382487750" duration="5788000" />
-      <workItem from="1581489584312" duration="30274000" />
+      <workItem from="1581489584312" duration="43733000" />
+      <workItem from="1581913882717" duration="6783000" />
+      <workItem from="1582202885543" duration="23635000" />
+      <workItem from="1582606048580" duration="66214000" />
+      <workItem from="1583308881839" duration="21658000" />
     </task>
     <servers />
   </component>

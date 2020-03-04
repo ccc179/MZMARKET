@@ -4,6 +4,14 @@
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'mzmarket/user/css/user.css' %}">
 {% endblock %}
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/md5.js' %}"></script>
+{% endblock %}
 {% block header %}
-    <header></header>
+    <header>
+    <div>
+        <a href="{% url 'mz:home' %}" style="color: dodgerblue; font-size: 0.4rem">点我返回首页</a>
+    </div>
+    </header>
 {% endblock %}

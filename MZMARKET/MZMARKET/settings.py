@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware.middleware.LoginMiddleware',
 
 ]
 
@@ -69,6 +70,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+
+            'libraries': {
+                'my_customer_tags': 'App.templatetags.set_var',
+            }
         },
     },
 ]
@@ -132,9 +137,32 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+MEDIA_KEY_PREFIX = "/static/uploads/"
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
 
+# 这个是给debug_tool_bar用的
 INTERNAL_IPS = [
     '127.0.0.1',
     'localhost',
 ]
+
+# smtp邮箱设置
+EMAIL_HOST = "smtp.163.com"
+EMAIL_PORT = "25"
+EMAIL_HOST_USER = 'abc69317780@163.com'
+EMAIL_HOST_PASSWORD = '1qaz2wsx3edc'
+
+SERVER_HOST = '127.0.0.1'
+SERVER_PORT = '9000'
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}

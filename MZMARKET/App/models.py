@@ -123,3 +123,21 @@ class MZUser(models.Model):
 
     class Meta:
         db_table = 'mz_user'
+
+
+class Cart(models.Model):
+    c_user = models.ForeignKey(MZUser)
+    c_goods = models.ForeignKey(Goods)
+
+    c_goods_num = models.IntegerField(default=1)
+    c_is_select = models.BooleanField(default=True)
+
+    class Meta:
+        db_table = 'mzmarket_cart'
+
+
+class Server_info(models.Model):
+    s_server_ip = models.CharField(max_length=32)
+    s_server_port = models.CharField(max_length=32)
+    s_server_username = models.CharField(max_length=32)
+    s_server_password = models.CharField(max_length=64)

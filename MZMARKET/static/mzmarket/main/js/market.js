@@ -1,4 +1,13 @@
 $(function () {
+    //登录用户直接显示已添加至购物车的商品数量
+    $(".goodsNum").each(function () {
+        var $goodsNum = $(this);
+        console.log($goodsNum.html().trim());
+        if ($goodsNum.html().trim()===""){
+            $goodsNum.html("0")
+        }
+    });
+    //全部分类排序点击
     $("#all_types").click(function () {
         console.log("我被点击了");
         var $all_types_container = $("#all_types_container");
@@ -56,5 +65,27 @@ $(function () {
         $span.removeClass("glyphicon glyphicon-chevron-up").addClass("glyphicon glyphicon-chevron-down")
     });
 
+
+
+    $(".subShopping").click(function () {
+        console.log("商品数量减少了1");
+
+    });
+
+    $(".addShopping").click(function () {
+        console.log("商品数量增加了1");
+        var $add = $(this);
+        var goodsid = $add.attr("goodsid");
+
+        $.get('/mz/addtocart/', {'goodsid': goodsid}, function (data) {
+           console.log(data);
+           if (data['status']===302){
+               window.open('/mz/login/', target="_self")
+           }else if (data['status'] === 200){
+                $add.prev('span').html(data['c_goods_num'])
+           }
+        });
+
+    })
 
 });

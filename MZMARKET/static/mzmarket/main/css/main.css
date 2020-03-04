@@ -69,7 +69,7 @@ footer .cart span{
     background:url(/static/img/cart.png) no-repeat;
     background-size:0.513889rem;
 }
-footer .mine span{
+footer .mine_icon span{
     background:url(/static/img/mine.png) no-repeat;
     background-size:0.513889rem;
 }

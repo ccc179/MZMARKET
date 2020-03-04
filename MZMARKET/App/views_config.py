@@ -10,3 +10,8 @@ ORDER_SALE_DOWN = "4"
 # HTTP CODE
 HTTP_USER_EXIST = 901
 HTTP_OK = 200
+
+# 授权码
+'''
+1qaz2wsx3edc
+'''

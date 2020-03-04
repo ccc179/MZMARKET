@@ -4,10 +4,16 @@
     {{ block.super }}
 {% endblock %}
 
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'mzmarket/user/js/login.js' %}"></script>
+{% endblock %}
+
 
 {% block content %}
     <div class="container">
-        <form method="post" action="{% url "mz:login" %}">
+    <p style="color: red">{{ error_message }}</p>
+        <form method="post" action="{% url "mz:login" %}" onsubmit="return parse_data()">
             {% csrf_token %}
             <div class="form-group">
                 <label for="username_input">用户名</label>
@@ -21,5 +27,6 @@
 
             <button type="submit" class="btn btn-success btn-block">登录</button>
         </form>
+        <a href="{% url 'mz:register' %}">没有账号？去注册></a>
     </div>
 {% endblock %}

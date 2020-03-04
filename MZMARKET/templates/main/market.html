@@ -4,10 +4,7 @@
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'mzmarket/main/css/market.css' %}">
 {% endblock %}
-{% block ext_js %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'mzmarket/main/js/market.js' %}"></script>
-{% endblock %}
+
 
 {% block content %}
     <div id="market">
@@ -57,9 +54,15 @@
                                 </div>
                             </a>
                             <section>
-                                <button>－</button>
-                                <span>0</span>
-                                <button>＋</button>
+                                <button goodsid="{{ goods.id }}" class="subShopping">－</button>
+
+
+                                <span class="goodsNum">{% for cart_good in cart_goods %}
+                                    {% ifequal cart_good.c_goods goods %}{{ cart_good.c_goods_num }}
+                                        {% endifequal %}
+                                    {% endfor %}</span>
+
+                                <button goodsid="{{ goods.id }}" class="addShopping">＋</button>
                             </section>
                         </li>
                     {% endfor %}
@@ -97,4 +100,9 @@
         </section>
     </div>
 
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'mzmarket/main/js/market.js' %}"></script>
 {% endblock %}
