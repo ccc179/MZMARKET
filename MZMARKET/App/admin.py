@@ -4,7 +4,7 @@ from App.models import MainMustbuy, MainNav, MainShop,MainShow, MainWheel, FoodT
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = 'u_uusername', 'u_roleid'
+    list_display = 'u_username', 'u_roleid'
     search_fields = 'u_username'
 
 
