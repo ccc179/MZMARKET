@@ -9,6 +9,9 @@ class Main(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return self.name
+
 
 class MainWheel(Main):
     """
@@ -71,6 +74,9 @@ class MainShow(Main):
     class Meta:
         db_table = 'mzmarket_mainshow'
 
+    def __str__(self):
+        return self.brandname
+
 
 class FoodType(models.Model):
     """
@@ -83,6 +89,9 @@ class FoodType(models.Model):
 
     class Meta:
         db_table = 'mzmarket_foodtypes'
+
+    def __str__(self):
+        return self.typename
 
 
 class Goods(models.Model):
@@ -111,6 +120,9 @@ class Goods(models.Model):
     class Meta:
         db_table = 'mzmarket_goods'
 
+    def __str__(self):
+        return self.productlongname
+
 
 class MZUser(models.Model):
     u_username = models.CharField(max_length=32, unique=True)
@@ -124,6 +136,9 @@ class MZUser(models.Model):
     class Meta:
         db_table = 'mz_user'
 
+    def __str__(self):
+        return self.u_username
+
 
 class Cart(models.Model):
     c_user = models.ForeignKey(MZUser)
@@ -135,9 +150,15 @@ class Cart(models.Model):
     class Meta:
         db_table = 'mzmarket_cart'
 
+    def __str__(self):
+        return self.c_user
 
-class Server_info(models.Model):
+
+class ServerInfo(models.Model):
     s_server_ip = models.CharField(max_length=32)
     s_server_port = models.CharField(max_length=32)
     s_server_username = models.CharField(max_length=32)
     s_server_password = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.s_server_ip

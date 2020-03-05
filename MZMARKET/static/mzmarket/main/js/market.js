@@ -66,14 +66,23 @@ $(function () {
     });
 
 
-
+    //market界面点击减号，只有商品数量大于0 的时候才可以减
     $(".subShopping").click(function () {
-        console.log("商品数量减少了1");
-
+        var $sub = $(this);
+        var goodsid = $sub.attr("goodsid");
+        if ($sub.next('span').html().trim() > 0){
+            $.getJSON('/mz/subfrommarket/', {'goodsid': goodsid}, function (data) {
+            console.log(data);
+            if (data['status'] === 200){
+                $sub.next('span').html(data['goodsNum'])
+            }
+        })
+        }else{
+            console.log("goodsNum<0 sub failed")
+        }
     });
 
     $(".addShopping").click(function () {
-        console.log("商品数量增加了1");
         var $add = $(this);
         var goodsid = $add.attr("goodsid");
 

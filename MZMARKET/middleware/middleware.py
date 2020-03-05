@@ -10,6 +10,7 @@ REQUEST_LOGIN_JSON = [
     "/mz/changecartstate/",
     "/mz/subfromcart/",
     "/mz/allselect/",
+    "/mz/subfrommarket/",
 ]
 
 REQUEST_LOGIN = [

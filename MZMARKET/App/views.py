@@ -312,3 +312,25 @@ def all_select(request):
 
     }
     return JsonResponse(data=data)
+
+
+def sub_from_market(request):
+    # 从market页面减，这里传回来的是goodsid
+    goodsid = request.GET.get("goodsid")
+    carts = Cart.objects.filter(c_user=request.user).filter(c_goods_id=goodsid)
+    data = {
+        'status': 200,
+        'msg': 'sub ok',
+    }
+
+    if carts.exists():
+        cart_obj = carts.first()
+        goodsNum = cart_obj.c_goods_num
+        if goodsNum > 1:
+            cart_obj.c_goods_num = cart_obj.c_goods_num - 1
+            cart_obj.save()
+            data['goodsNum'] = cart_obj.c_goods_num
+        else:
+            cart_obj.delete()
+            data['goodsNum'] = 0
+    return JsonResponse(data=data)

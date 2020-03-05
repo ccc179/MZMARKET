@@ -1,10 +1,15 @@
 from django.contrib import admin
 
-from App.models import MainMustbuy, MainNav, MainShop,MainShow, MainWheel
-'''账号admin 密码a2316252221'''
+from App.models import MainMustbuy, MainNav, MainShop,MainShow, MainWheel, FoodType, Goods, MZUser, Cart, ServerInfo
+'''账号tom 密码：门 '''
 # 注册Model类
 admin.site.register(MainShow)
 admin.site.register(MainWheel)
 admin.site.register(MainNav)
 admin.site.register(MainMustbuy)
 admin.site.register(MainShop)
+admin.site.register(FoodType)
+admin.site.register(Goods)
+admin.site.register(MZUser)
+admin.site.register(Cart)
+admin.site.register(ServerInfo)

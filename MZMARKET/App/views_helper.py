@@ -42,4 +42,5 @@ def get_total_price(user):
     total = 0
     for cart in carts:
         total += cart.c_goods_num * cart.c_goods.price
+    total = round(total, 2)
     return total
