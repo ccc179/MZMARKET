@@ -1,0 +1,10 @@
+header{
+    height: 1.5rem;
+    background: orange;
+    margin-bottom: 0.3rem;
+}
+header > a{
+    color: dodgerblue;
+    font-size: 0.4rem;
+}
+

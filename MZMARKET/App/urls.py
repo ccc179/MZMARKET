@@ -22,4 +22,7 @@ urlpatterns = [
     url(r'^subfromcart/', views.sub_from_cart, name='sub_from_cart'),
     url(r'^allselect/', views.all_select, name='all_select'),
     url(r'^subfrommarket/', views.sub_from_market, name='sub_from_market'),
+
+    url(r'^makeorder/', views.make_order, name='make_order'),
+    url(r'^orderdetail/', views.order_detail, name='order_detail'),
 ]

@@ -4,8 +4,8 @@ from App.models import MainMustbuy, MainNav, MainShop,MainShow, MainWheel, FoodT
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = 'u_name', 'u_password'
-    search_fields = 'u_name'
+    list_display = 'u_username', 'u_roleid'
+    search_fields = 'u_username',
 
 
 '''账号tom 密码：门 '''

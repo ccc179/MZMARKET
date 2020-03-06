@@ -1,5 +1,7 @@
 from django.db import models
 
+from App.views_config import ORDER_STATUS_NOT_PAY
+
 
 class Main(models.Model):
     img = models.CharField(max_length=255)
@@ -131,6 +133,7 @@ class MZUser(models.Model):
     u_icon = models.ImageField(upload_to='icon/%Y/%m/%d/')
     is_active = models.BooleanField(default=False)
     is_delete = models.BooleanField(default=False)
+    u_rolename = models.CharField(max_length=64, default="无")
     u_roleid = models.IntegerField(default=1)
 
     class Meta:
@@ -162,3 +165,25 @@ class ServerInfo(models.Model):
 
     def __str__(self):
         return self.s_server_ip
+
+
+class Order(models.Model):
+    o_user = models.ForeignKey(MZUser)
+    o_paymoney = models.FloatField(default=0)
+    o_create = models.DateTimeField(auto_now=True)
+    o_status = models.IntegerField(default=ORDER_STATUS_NOT_PAY)
+
+    class Meta:
+        db_table = 'mz_order'
+
+
+class OrderGoods(models.Model):
+    o_order = models.ForeignKey(Order)
+    o_goods = models.ForeignKey(Goods)
+    o_goods_num = models.IntegerField(default=1)
+    o_platformordernumber = models.CharField(max_length=255)
+    o_extdata = models.CharField(max_length=128)
+    o_realmoney = models.FloatField(default=0)
+
+    class Meta:
+        db_table = 'mz_ordergoods'

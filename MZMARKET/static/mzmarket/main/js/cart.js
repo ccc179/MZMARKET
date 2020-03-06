@@ -97,4 +97,28 @@ $(function () {
         }
     })
 
+//
+    $("#make_order").click(function () {
+        var select_list = [];
+        var unselect_list = [];
+        $(".confirm").each(function () {
+            var $confirm = $(this);
+            var cartid = $confirm.parents("li").attr("cartid");
+            if ($confirm.find("span").find("span").html().trim()) {
+                select_list.push(cartid)
+            } else {
+                unselect_list.push(cartid)
+            }
+        });
+        if(select_list.length === 0){
+            return
+        }
+        $.getJSON("/mz/makeorder/", function (data) {
+            console.log(data);
+            if(data["status"] === 200){
+                window.open('/mz/orderdetail/?orderid=' + data["order_id"], target="_self");
+            }
+        })
+    })
+
 })

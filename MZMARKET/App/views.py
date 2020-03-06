@@ -8,7 +8,8 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from django.urls import reverse
 
-from App.models import MainWheel, MainNav, MainMustbuy, MainShop, MainShow, FoodType, Goods, MZUser, Cart
+from App.models import MainWheel, MainNav, MainMustbuy, MainShop, MainShow, FoodType, Goods, MZUser, Cart, Order, \
+    OrderGoods
 from App.views_config import ALL_TYPE, ORDER_TOTAL, ORDER_PRICE_UP, ORDER_PRICE_DOWN, ORDER_SALE_UP, ORDER_SALE_DOWN, \
     HTTP_USER_EXIST, HTTP_OK
 from App.views_helper import hash_str, sendemail_activate, get_total_price
@@ -150,6 +151,7 @@ def register(request):
         user.u_password = password
         user.u_email = email
         user.u_icon = icon
+        user.u_rolename = role
         user.u_roleid = len(role)
 
         user.save()
@@ -334,3 +336,40 @@ def sub_from_market(request):
             cart_obj.delete()
             data['goodsNum'] = 0
     return JsonResponse(data=data)
+
+
+def make_order(request):
+    carts = Cart.objects.filter(c_user=request.user).filter(c_is_select=True)
+
+    order = Order()
+    order.o_user = request.user
+    order.o_paymoney = get_total_price(request.user)
+    order.save()
+
+    for cart_obj in carts:
+        ordergoods = OrderGoods()
+        ordergoods.o_order = order
+        ordergoods.o_goods = cart_obj.c_goods
+        ordergoods.o_goods_num = cart_obj.c_goods_num
+        ordergoods.o_extdata = cart_obj.c_goods_id
+        ordergoods.save()
+        cart_obj.delete()
+
+    data = {
+        "status": 200,
+        "msg": 'ok',
+        "order_id": order.id,
+    }
+
+    return JsonResponse(data=data)
+
+
+def order_detail(request):
+    order_id = request.GET.get("orderid")
+    order = Order.objects.get(pk=order_id)
+
+    data = {
+        "title": "订单详情",
+        "order": order,
+    }
+    return render(request, 'order/order_detail.html', context=data)

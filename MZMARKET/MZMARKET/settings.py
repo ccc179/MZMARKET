@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'yb&$%dl+-lpt&jc4x^7^xp8#4q)*rayb0k)v+j2j!bj@pt_1h7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'MZMARKET',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': 'AbC258012',
         'HOST': 'localhost',
         'PORT': 3306,
     }

@@ -1,0 +1,41 @@
+{% extends 'base_order.html' %}
+{% load static %}
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'mzmarket/order/css/order_detail.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'mzmarket/order/js/order_detail.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="order_detail" class="container">
+        <h6>订单编号:<span id="orderid">{{ order.id }}</span></h6>
+        <h6>角色名:{{ order.o_user.u_rolename }}&nbsp;&nbsp;&nbsp;角色ID:<span id="roleid">{{ order.o_user.u_roleid }}</span></h6>
+        商品列表:
+        <ul>
+            {% for ordergoods in order.ordergoods_set.all %}
+                <li class="menuList">
+                    <a href="#">
+                        <img src="{{ ordergoods.o_goods.productimg }}" alt="{{ ordergoods.o_goods.productlongname }}">
+                        <p>{{ ordergoods.o_goods.productlongname }}</p>
+                        <p class="presentPrice">{{ ordergoods.o_goods.price }}</p>
+                    </a>
+
+                    <section>
+                        <span>{{ ordergoods.o_goods_num }}</span>
+                    </section>
+                </li>
+            {% endfor %}
+        </ul>
+        <h5>总价：<span class="presentPrice" id="total_price">{{ order.o_paymoney }}</span></h5>
+
+        <button class="btn btn-success btn-block" id="baoyuanpay">支付</button>
+
+    </div>
+
+    <a href="{% url 'mz:cart' %}">返回购物车</a>
+
+{% endblock %}
